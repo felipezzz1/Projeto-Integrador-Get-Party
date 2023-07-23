@@ -1,0 +1,33 @@
+ion-toolbar{
+    --ion-background-color: transparent;
+    --opacity: 0;
+}
+
+ion-header{
+    position: absolute;
+    text-align: center;
+}
+
+ion-card{
+    box-shadow: none;
+}
+
+ion-card-header{
+    text-align: center;
+
+}
+
+.signin-btns{
+    margin-top: 2em;
+    text-align: center;
+}
+
+.text-tag{
+    margin-top: 12em;
+    text-align: center;
+    span{
+        font-size: 1.1em;
+        font-weight: normal;
+        color: #898585;
+    }
+}

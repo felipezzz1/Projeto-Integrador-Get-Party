@@ -1,0 +1,64 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-color">
+  <ion-card>
+    <ion-img src="assets/images/Joystick.png"> </ion-img>
+    <ion-card-header>
+      <ion-card-title> Registro </ion-card-title>
+      <ion-card-subtitle>
+        Preencha os campos e crie sua conta!
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="formSignUp" (ngSubmit)="submitForm()">
+        <ion-item>
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-input
+            placeholder="Nome"
+            formControlName="name"
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="mail-outline"></ion-icon>
+          <ion-input
+            placeholder="Email"
+            formControlName="email"
+            required
+          ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <ion-input
+            type="password"
+            placeholder="Senha"
+            formControlName="password"
+            required
+          ></ion-input>
+        </ion-item>
+        <div class="profile-image">
+          Envie uma imagem de perfil!
+          <ion-button size="default" shape="round">
+            <input type="file" formControlName="image" (change)="uploadFile($event.target)" />
+          </ion-button>
+        </div>
+        
+        <div class="sign-up-btn">
+          <ion-button
+            shape="round"
+            fill="solid"
+            class="sign-up-btn"
+            type="submit"
+            >Registrar-se</ion-button
+          >
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

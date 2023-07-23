@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> GetParty </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item *ngFor="let profile of profiles">
+      <ion-avatar>
+        <img src="{{profile.profileImageURL}}">
+      </ion-avatar>
+      <ion-label>{{profile.name}}</ion-label>
+      <ion-button href="https://steamcommunity.com/id/{{profile.steamLink}}" placeholder="Link"> <ion-icon slot="end" name="logo-steam" color="white" fill="outline"></ion-icon></ion-button>
+      <ion-button href="https://www.op.gg/summoners/br/{{profile.lol}}" fill="solid">LoL</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
